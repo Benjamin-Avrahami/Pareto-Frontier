@@ -1,13 +1,14 @@
 import * as d3 from "d3";
 import {useRef, useEffect, useState} from "react";
+import Chart from './Chart.jsx'
 
 
 function randomArray(hght, len) {
     let ret = [];
     for (let i = 0; i < len; i++) {
-        let ins = [];
+        let ins = {};
         for (let j = 0; j < hght; j++) {
-            ins.push(Math.random());
+            ins["val"+j] = 10*Math.random();
         }
         ret.push(ins);
     }
@@ -15,22 +16,18 @@ function randomArray(hght, len) {
 }
 
 
-
-
 function Display2DArrayValues({arr}) {
     return (
         <div>
             {arr.map((insarr, i) =>
                 <div key={i}>
-                    {insarr.map((arrval, j) =>
-                        <p key={j}>{arrval}</p>
-                    )}
-                    <br></br>
+                    <p>{insarr["val0"]}, {insarr["val1"]}</p>
                 </div>
             )}
         </div>
     )
 }
+
 
 
 export default function LinePlot() {
@@ -40,18 +37,14 @@ export default function LinePlot() {
     const [data, setData] = useState(randomArray(5, 10))
 
     return (
-        <div>
-            <svg>
-                <circle
-                    cx="150"
-                    cy="77"
-                    r="40"
-                />
-            </svg>
+        <>
+            <Chart data={data} xvalue="val0" yvalue="val1" />
 
+            <br></br>
 
-        <Display2DArrayValues arr={data} />
-        </div>
+            <p>Listed data:</p>
+            <Display2DArrayValues arr={data} />
+        </>
 
     );
 }
