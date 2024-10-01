@@ -9,9 +9,11 @@ function Chart({data, xvalue, yvalue}) {
         <PlotFigure
             options={{
                 x: {
+                    type: "linear",
                     nice: true
                 },
                 y: {
+                    type: "linear",
                     nice: true
                 },
                 grid: true,
