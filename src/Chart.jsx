@@ -8,11 +8,17 @@ function Chart({data, xvalue, yvalue}) {
         <>
         <PlotFigure
             options={{
+                x: {
+                    nice: true
+                },
+                y: {
+                    nice: true
+                },
                 grid: true,
                 marks: [
                     Plot.ruleX([0]),
                     Plot.ruleY([0]),
-                    Plot.dot(data, {x: xvalue, y: yvalue})
+                    Plot.dot(data, {x: xvalue, y: yvalue, fill: "currentColor"})
                 ]
             }}
         />

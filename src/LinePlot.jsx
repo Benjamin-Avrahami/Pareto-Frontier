@@ -7,8 +7,9 @@ function randomArray(hght, len) {
     let ret = [];
     for (let i = 0; i < len; i++) {
         let ins = {};
+        ins["Name"] = "Random Point " + i;
         for (let j = 0; j < hght; j++) {
-            ins["val"+j] = 10*Math.random();
+            ins["val"+j] = Number((10*Math.random()).toFixed(3));
         }
         ret.push(ins);
     }
@@ -21,7 +22,11 @@ function Display2DArrayValues({arr}) {
         <div>
             {arr.map((insarr, i) =>
                 <div key={i}>
-                    <p>{insarr["val0"]}, {insarr["val1"]}</p>
+                    <p>
+                    {Object.entries(insarr).map((insvals, j) =>
+                        <div style={{display: 'inline'}}>{j != 0 ? ', ' : ''}{insvals[0]}: {insvals[1]}</div>
+                    )}
+                    </p>
                 </div>
             )}
         </div>
