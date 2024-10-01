@@ -6,7 +6,8 @@ import {
 } from "react-router-dom"
 
 import App from './App.jsx'
-import LinePlot from './LinePlot.jsx'
+import RandomPlot from './RandomPlot.jsx'
+import UserPlot from './UserPlot.jsx'
 
 const router = createBrowserRouter([
     {
@@ -14,8 +15,12 @@ const router = createBrowserRouter([
         element: <App />
     },
     {
+        path: "/randomchart",
+        element: <RandomPlot />
+    },
+    {
         path: "/chart",
-        element: <LinePlot />
+        element: <UserPlot />
     }
 ]);
 

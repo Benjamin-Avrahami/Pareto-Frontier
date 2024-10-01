@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 import {useRef, useEffect, useState} from "react";
 import Chart from './Chart.jsx'
-import DataEntry from './DataEntry.jsx'
 
 
 function randomArray(hght, len) {
@@ -36,7 +35,7 @@ function Display2DArrayValues({arr}) {
 
 
 
-export default function LinePlot() {
+export default function RandomPlot() {
 
 
 
@@ -50,9 +49,6 @@ export default function LinePlot() {
 
             <p>Listed data:</p>
             <Display2DArrayValues arr={data} />
-
-            <br></br>
-            <DataEntry rows={5} columns={5} />
         </>
 
     );

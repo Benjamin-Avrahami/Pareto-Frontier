@@ -38,9 +38,9 @@ function initialDataValues(rows, columns) {
 }
 
 
-function DataEntry({ rows, columns }) {
-    const [headers, setHeaders] = useState(initialHeaders(columns));
-    const [data, setData] = useState(initialDataValues(rows, columns));
+function UserPlot() {
+    const [headers, setHeaders] = useState(initialHeaders(5));
+    const [data, setData] = useState(initialDataValues(10, 5));
 
 
 
@@ -88,4 +88,4 @@ function DataEntry({ rows, columns }) {
 }
 
 
-export default DataEntry;
+export default UserPlot;
